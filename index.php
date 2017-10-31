@@ -7,12 +7,41 @@
  
 <div id="wrapper">
     <div id="menu">
+     <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
         <p class="welcome">Welcome, <b></b></p>
         <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
         <div style="clear:both"></div>
     </div>
      
     <div id="chatbox">
+     <?php
+if(!isset($_SESSION['name'])){
+    loginForm();
+}
+else{
+?>
+<div id="wrapper">
+    <div id="menu">
+        <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+        <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+        <div style="clear:both"></div>
+    </div>    
+    <div id="chatbox"></div>
+     
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" size="63" />
+        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+    </form>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+});
+</script>
+<?php
+}
+?>
      <?
 session_start();
  
@@ -49,7 +78,14 @@ if(isset($_POST['enter'])){
 <script type="text/javascript">
 // jQuery Document
 $(document).ready(function(){
- 
+ $(document).ready(function(){
+	//If user wants to end session
+	$("#exit").click(function(){
+		var exit = confirm("Are you sure you want to end the session?");
+		if(exit==true){window.location = 'index.php?logout=true';}		
+	});
+});
+
 });
 </script>
 </body>
