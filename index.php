@@ -76,6 +76,16 @@ if(isset($_POST['enter'])){
 </div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
+if(isset($_GET['logout'])){ 
+     
+    //Simple exit message
+    $fp = fopen("log.html", 'a');
+    fwrite($fp, "<div class='msgln'><i>User ". $_SESSION['name'] ." has left the chat session.</i><br></div>");
+    fclose($fp);
+     
+    session_destroy();
+    header("Location: index.php"); //Redirect the user
+}
 // jQuery Document
 $(document).ready(function(){
  $(document).ready(function(){
