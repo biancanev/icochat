@@ -18,3 +18,8 @@ $(document).ready(function(){
 	});
 });
 </script>
+<style>
+button {
+	color: #32CD32;
+	}
+</style>
