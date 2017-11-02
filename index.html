@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
-<title>Potato Place Isochat</title>
-	<h1>Welcome to the Potato Place's Isochat!</h1>
+     <title>Potato Place Isochat</title>
 </head>
-<body>
-	<p>We regret to say that the Isochat is not yet ready. Please be patient!</p>
-	<form action="chat.html">
-	<input type="submit" value="Login"></input>
-	</form>
-</body>
+    <body>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
+        <div id="background">
+            <h1>Welcome to the Potato Place's Isochat!</h1>
+            <hr>
+        </div>
+	    <p>We regret to say that the Isochat is not yet ready. Please be patient!</p>
+	    <form action="chat.html">
+	        <input type="submit" value="Login" id="button"></input>
+	    </form>
+    </body>
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
 $(document).ready(function(){
 	$("button").click(function(){
 		$("button").hide();
@@ -24,7 +28,7 @@ $(document).ready(function(){
 	
 </script>
 <style>
-button{
-	color: #32CD32;
-	}
+#head {
+    background-color: #B7E2F0;
+}
 </style>
